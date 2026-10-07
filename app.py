@@ -184,5 +184,7 @@ def crawl_endpoint():
         return jsonify({"status": "error", "message": str(e)}), 500
 
 
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    port = int(os.environ.get("PORT", 9090))
+    app.run(host="0.0.0.0", port=port, debug=False)
